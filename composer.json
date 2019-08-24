@@ -1,0 +1,23 @@
+{
+  "name": "floatphp/interfaces",
+  "type": "library",
+  "description": "Interfaces lib for floatPHP",
+  "keywords": ["php","micro-framework","framework","PSR","ORM","jakiboy"],
+  "homepage": "https://www.floatphp.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jihad Sinnaour",
+      "email": "mail@jihadsinnaour.com",
+      "role": "Founder"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "autoload": {
+    "psr-4" : {
+      "floatPHP\\Interfaces\\" : "src/"
+    }
+  }
+}
