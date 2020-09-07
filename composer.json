@@ -1,5 +1,6 @@
 {
   "name": "floatphp/interfaces",
+  "version" : "1.0.0-beta",
   "type": "library",
   "description": "Interfaces lib for floatPHP",
   "keywords": ["php","micro-framework","framework","PSR","ORM","jakiboy"],
@@ -10,10 +11,15 @@
       "name": "Jihad Sinnaour",
       "email": "mail@jihadsinnaour.com",
       "role": "Founder"
+    },
+    {
+      "name": "Softgine",
+      "email": "e-mailing@soft-gine.com",
+      "role": "Developer"
     }
   ],
   "require": {
-    "php": ">=7.1"
+    "php": ">=7.3"
   },
   "autoload": {
     "psr-4" : {

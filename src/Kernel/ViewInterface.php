@@ -14,7 +14,31 @@ namespace floatphp\Interfaces\Kernel;
 
 interface ViewInterface
 {
-	public static function setConfig($config = []): void;
-	public static function render($data, $view): void;
-	public static function assign($data = [], $view = 'system/default'): string;
+    /**
+     * Define custom callables
+     *
+     * @access public
+     * @param array $callables
+     * @return void
+     */
+    function setCallables($callables = []);
+    
+    /**
+     * Render view
+     *
+     * @access public
+     * @param {inherit}
+     * @return void
+     */
+    function render($content = [], $template = 'default');
+
+    /**
+     * Aassign content to view
+     *
+     * @access public
+     * @param array $content
+     * @param string $template
+     * @return string
+     */
+    function assign($content = [], $template = 'default');
 }
