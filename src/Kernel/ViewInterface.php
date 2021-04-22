@@ -2,15 +2,15 @@
 /**
  * @author    : JIHAD SINNAOUR
  * @package   : FloatPHP
- * @subpackage: Interfaces Component
- * @version   : 1.0.0
+ * @subpackage: Interfaces Kernel Component
+ * @version   : 1.0.1
  * @category  : PHP framework
- * @copyright : (c) JIHAD SINNAOUR <mail@jihadsinnaour.com>
+ * @copyright : (c) 2017 - 2021 JIHAD SINNAOUR <mail@jihadsinnaour.com>
  * @link      : https://www.floatphp.com
  * @license   : MIT License
  */
 
-namespace floatphp\Interfaces\Kernel;
+namespace FloatPHP\Interfaces\Kernel;
 
 interface ViewInterface
 {
