@@ -14,20 +14,20 @@ namespace FloatPHP\Interfaces\Kernel;
 
 interface OrmInterface
 {
-	public function __set($name, $value);
-	public function __get($name);
-	public function select(OrmQueryInterface $data);
-	public function query($sql, $isSingle);
-	public function save($id = '0');
-	public function create();
-	public function delete($id = '0');
-	public function find($id = '');
-	public function search($fields = [], $sort = []);
-	public function all();
-	public function min($field);
-	public function max($field);
-	public function avg($field);
-	public function sum($field);
-	public function count($field, $data = null);
-	public function deleteAll($table);
+	function __set($name, $value);
+	function __get($name);
+	function select(OrmQueryInterface $data);
+	function query($sql, $isSingle);
+	function save($id = '0');
+	function create();
+	function delete($id = '0');
+	function find($id = '');
+	function search($fields = [], $sort = []);
+	function all();
+	function min($field);
+	function max($field);
+	function avg($field);
+	function sum($field);
+	function count($field, $data = null);
+	function deleteAll($table);
 }
