@@ -14,7 +14,4 @@
 
 namespace FloatPHP\Interfaces\Kernel;
 
-interface OrmQueryInterface
-{
-	function __construct($query = []);
-}
+interface FrontInterface {}

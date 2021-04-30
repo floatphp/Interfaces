@@ -14,7 +14,8 @@
 
 namespace FloatPHP\Interfaces\Kernel;
 
-interface OrmQueryInterface
+interface AuthenticationInterface
 {
-	function __construct($query = []);
+	function getUser($username);
+	function getKey();
 }

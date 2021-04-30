@@ -12,24 +12,19 @@
  * This file if a part of FloatPHP Framework
  */
 
-namespace FloatPHP\Interfaces\Kernel;
+namespace FloatPHP\Interfaces;
 
-interface OrmInterface
+interface ModelInterface
 {
-	function __set($name, $value);
-	function __get($name);
-	function select(OrmQueryInterface $data);
-	function query($sql, $isSingle);
-	function save($id = '0');
-	function create();
-	function delete($id = '0');
-	function find($id = '');
-	function search($fields = [], $sort = []);
 	function all();
+	function create();
+	function save($id);
+	function delete($id);
+	function find($id);
+	function search($fields = [], $sort = []);
 	function min($field);
 	function max($field);
 	function avg($field);
 	function sum($field);
-	function count($field, $data = null);
-	function deleteAll($table);
+	function count($field);
 }
