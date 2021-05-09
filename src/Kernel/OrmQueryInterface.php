@@ -16,5 +16,8 @@ namespace FloatPHP\Interfaces\Kernel;
 
 interface OrmQueryInterface
 {
+	/**
+	 * @param array $query
+	 */
 	function __construct($query = []);
 }

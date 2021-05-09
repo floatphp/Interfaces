@@ -16,20 +16,110 @@ namespace FloatPHP\Interfaces\Kernel;
 
 interface OrmInterface
 {
+	/**
+	 * @param string $name
+	 * @param string $value
+	 */
 	function __set($name, $value);
+
+	/**
+	 * @param string $name
+	 * @return object|null
+	 */
 	function __get($name);
+
+	/**
+	 * @param array $data
+	 * @return void
+	 */
+	function init($data = []);
+
+	/**
+	 * @param OrmQueryInterface $data
+	 * @return mixed
+	 */
 	function select(OrmQueryInterface $data);
-	function query($sql, $isSingle);
+
+	/**
+	 * @param string $sql
+	 * @param array $params
+	 * @param array $args
+	 * @return mixed
+	 */
+	function query($sql, $params = null, $args = []);
+
+	/**
+	 * @param string $id
+	 * @return array|null
+	 */
 	function save($id = '0');
+
+	/**
+	 * @param void
+	 * @return array
+	 */
 	function create();
+
+	/**
+	 * @param string|int $id
+	 * @return array
+	 */
 	function delete($id = '0');
+
+	/**
+	 * @param string $id
+	 * @return void
+	 */
 	function find($id = '');
+
+	/**
+	 * @param array $fields
+	 * @param array $sort
+	 * @return array
+	 */
 	function search($fields = [], $sort = []);
-	function all();
+
+	/**
+	 * @param bool $isRow
+	 * @return array
+	 */
+	function all($isRow = false);
+
+	/**
+	 * @param string $field
+	 * @return int|null
+	 */
 	function min($field);
+
+	/**
+	 * @param string $field
+	 * @return int|null
+	 */
 	function max($field);
+
+	/**
+	 * @param string $field
+	 * @return int|null
+	 */
 	function avg($field);
+
+	/**
+	 * @param string $field
+	 * @return int|null
+	 */
 	function sum($field);
-	function count($field, $data = null);
+
+	/**
+	 * @param string $field
+	 * @return int|null
+	 */
+	function count($field = '*', $data = null);
+
+	/**
+	 * Delete all query
+	 *
+	 * @param string $table
+	 * @return int
+	 */
 	function deleteAll($table);
 }

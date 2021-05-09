@@ -2,7 +2,7 @@
 /**
  * @author    : JIHAD SINNAOUR
  * @package   : FloatPHP
- * @subpackage: Interfaces Kernel Component
+ * @subpackage: Interfaces Classes Component
  * @version   : 1.0.0
  * @category  : PHP framework
  * @copyright : (c) 2017 - 2021 JIHAD SINNAOUR <mail@jihadsinnaour.com>
@@ -12,19 +12,14 @@
  * This file if a part of FloatPHP Framework
  */
 
-namespace FloatPHP\Interfaces\Kernel;
+namespace FloatPHP\Interfaces\Classes;
 
-interface AuthenticationInterface
+interface LoggerInterface
 {
-	/**
-	 * @param string $username
-	 * @return mixed
-	 */
-	function getUser(string $username);
-
-	/**
-	 * @param void
-	 * @return string
-	 */
-	function getKey() : string;
+    /**
+     * @param string $path
+     * @param string $filename
+     * @param string $extension
+     */
+    function __construct($path, $filename, $extension);
 }
