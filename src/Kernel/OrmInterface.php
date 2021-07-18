@@ -24,11 +24,13 @@ interface OrmInterface
 
 	/**
 	 * @param string $name
-	 * @return object|null
+	 * @return mixed
 	 */
 	function __get($name);
 
 	/**
+	 * Init database object
+	 *
 	 * @param array $data
 	 * @return void
 	 */
@@ -42,84 +44,95 @@ interface OrmInterface
 
 	/**
 	 * @param string $sql
-	 * @param array $params
+	 * @param array $bind
 	 * @param array $args
 	 * @return mixed
 	 */
-	function query($sql, $params = null, $args = []);
+	function query($sql, $bind = null, $args = []);
 
 	/**
-	 * @param string $id
-	 * @return array|null
+	 * @param int $id
+	 * @return mixed
 	 */
-	function save($id = '0');
+	function save($id = 0);
 
 	/**
 	 * @param void
-	 * @return array
+	 * @return int
 	 */
-	function create();
+	function create() : int;
 
 	/**
-	 * @param string|int $id
-	 * @return array
+	 * @param int $id
+	 * @return int
 	 */
-	function delete($id = '0');
+	function delete($id = 0) : int;
 
 	/**
-	 * @param string $id
-	 * @return void
+	 * @param int $id
+	 * @return mixed
 	 */
-	function find($id = '');
+	function find($id = 0);
 
 	/**
 	 * @param array $fields
 	 * @param array $sort
-	 * @return array
+	 * @return mixed
 	 */
 	function search($fields = [], $sort = []);
 
 	/**
-	 * @param bool $isRow
-	 * @return array
+	 * @param void
+	 * @return mixed
 	 */
-	function all($isRow = false);
+	function all();
 
 	/**
 	 * @param string $field
-	 * @return int|null
+	 * @return mixed
 	 */
-	function min($field);
+	function min(string $field);
 
 	/**
 	 * @param string $field
-	 * @return int|null
+	 * @return mixed
 	 */
-	function max($field);
+	function max(string $field);
 
 	/**
 	 * @param string $field
-	 * @return int|null
+	 * @return mixed
 	 */
-	function avg($field);
+	function avg(string $field);
 
 	/**
 	 * @param string $field
-	 * @return int|null
+	 * @return mixed
 	 */
-	function sum($field);
+	function sum(string $field);
 
 	/**
-	 * @param string $field
-	 * @return int|null
+	 * @param array $data
+	 * @return mixed
 	 */
-	function count($field = '*', $data = null);
+	function count($data = null);
 
 	/**
-	 * Delete all query
-	 *
 	 * @param string $table
 	 * @return int
 	 */
-	function deleteAll($table);
+	function deleteAll($table) : int;
+
+	/**
+	 * @param string $table
+	 * @return mixed
+	 */
+	function resetId($table = '');
+
+	/**
+	 * @param void
+	 * @return bool
+	 * @throws PDOException
+	 */
+	function createDatabase();
 }
