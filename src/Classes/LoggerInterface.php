@@ -22,4 +22,38 @@ interface LoggerInterface
      * @param string $extension
      */
     function __construct($path, $filename, $extension);
+
+    /**
+     * @param string $message
+     * @return void
+     */
+    function error($message = '');
+
+    /**
+     * @param string $message
+     * @return void
+     */
+    function warning($message = '');
+
+    /**
+     * @param string $message
+     * @return void
+     */
+    function info($message = '');
+
+    /**
+     * @param string $message
+     * @param string $type
+     * @return void
+     */
+    function custom($message = '', $type = 'custom');
+
+    /**
+     * @param string $message
+     * @param int $type 0
+     * @param string $path
+     * @param string $headers
+     * @return void
+     */
+    function log($message = '', $type = 0, $path = null, $headers = null);
 }
