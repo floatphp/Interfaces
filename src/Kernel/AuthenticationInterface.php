@@ -23,6 +23,12 @@ interface AuthenticationInterface
 	function getUser(string $username);
 
 	/**
+	 * @param string $username
+	 * @return bool
+	 */
+	function hasSecret(string $username) : bool;
+
+	/**
 	 * @param void
 	 * @return string
 	 */
