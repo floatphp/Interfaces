@@ -17,6 +17,12 @@ namespace FloatPHP\Interfaces\Kernel;
 interface OrmInterface
 {
 	/**
+	 * @param array $data
+	 * @return void
+	 */
+	function __construct($data = []);
+
+	/**
 	 * @param string $name
 	 * @param string $value
 	 */
@@ -27,14 +33,6 @@ interface OrmInterface
 	 * @return mixed
 	 */
 	function __get($name);
-
-	/**
-	 * Init database object
-	 *
-	 * @param array $data
-	 * @return void
-	 */
-	function init($data = []);
 
 	/**
 	 * @param OrmQueryInterface $data
