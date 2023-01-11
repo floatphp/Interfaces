@@ -1,8 +1,8 @@
 {
   "name": "floatphp/interfaces",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "type": "library",
-  "description": "Interfaces lib for floatPHP",
+  "description": "FloatPHP Interfaces Components",
   "keywords": ["php","micro-framework","framework","PSR","ORM","jakiboy"],
   "homepage": "https://www.floatphp.com/",
   "license": "MIT",
