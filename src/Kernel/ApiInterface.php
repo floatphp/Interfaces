@@ -3,7 +3,7 @@
  * @author     : JIHAD SINNAOUR
  * @package    : FloatPHP
  * @subpackage : Interfaces Kernel Component
- * @version    : 1.0.1
+ * @version    : 1.0.2
  * @category   : PHP framework
  * @copyright  : (c) 2017 - 2021 JIHAD SINNAOUR <mail@jihadsinnaour.com>
  * @link       : https://www.floatphp.com

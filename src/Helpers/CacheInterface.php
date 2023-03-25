@@ -12,12 +12,6 @@
  * This file if a part of FloatPHP Framework.
  */
 
-namespace FloatPHP\Interfaces\Kernel;
+namespace FloatPHP\Interfaces\Helpers;
 
-interface OrmQueryInterface
-{
-	/**
-	 * @param array $query
-	 */
-	function __construct($query = []);
-}
+interface CacheInterface {}
