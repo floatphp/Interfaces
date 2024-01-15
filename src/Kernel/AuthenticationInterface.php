@@ -1,12 +1,12 @@
 <?php
 /**
- * @author     : JIHAD SINNAOUR
+ * @author     : Jakiboy
  * @package    : FloatPHP
  * @subpackage : Interfaces Kernel Component
- * @version    : 1.0.2
+ * @version    : 1.1.0
  * @category   : PHP framework
- * @copyright  : (c) 2017 - 2021 JIHAD SINNAOUR <mail@jihadsinnaour.com>
- * @link       : https://www.floatphp.com
+ * @copyright  : (c) 2018 - 2024 Jihad Sinnaour <mail@jihadsinnaour.com>
+ * @link       : https://floatphp.com
  * @license    : MIT
  *
  * This file if a part of FloatPHP Framework.
@@ -17,19 +17,18 @@ namespace FloatPHP\Interfaces\Kernel;
 interface AuthenticationInterface
 {
 	/**
-	 * @param string $username
+	 * @param string $user
 	 * @return mixed
 	 */
-	function getUser(string $username);
+	function getUser(string $user);
 
 	/**
-	 * @param string $username
+	 * @param string $user
 	 * @return bool
 	 */
-	function hasSecret(string $username) : bool;
+	function hasSecret(string $user) : bool;
 
 	/**
-	 * @param void
 	 * @return string
 	 */
 	function getKey() : string;

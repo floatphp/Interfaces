@@ -1,12 +1,12 @@
 <?php
 /**
- * @author     : JIHAD SINNAOUR
+ * @author     : Jakiboy
  * @package    : FloatPHP
  * @subpackage : Interfaces Kernel Component
- * @version    : 1.0.2
+ * @version    : 1.1.0
  * @category   : PHP framework
- * @copyright  : (c) 2017 - 2021 JIHAD SINNAOUR <mail@jihadsinnaour.com>
- * @link       : https://www.floatphp.com
+ * @copyright  : (c) 2018 - 2024 Jihad Sinnaour <mail@jihadsinnaour.com>
+ * @link       : https://floatphp.com
  * @license    : MIT
  *
  * This file if a part of FloatPHP Framework.
@@ -17,119 +17,98 @@ namespace FloatPHP\Interfaces\Kernel;
 interface OrmInterface
 {
 	/**
+	 * @param string $name
+	 * @param mixed $value
+	 */
+	function __set(string $name, $value);
+
+	/**
+	 * @param string $name
+	 * @return mixed
+	 */
+	function __get(string $name);
+
+	/**
+	 * @param mixed $bind
+	 * @param mixed $value
+	 * @return object
+	 */
+	function bind($bind = [], $value = null) : self;
+
+	/**
+	 * @param string $table
+	 * @return object
+	 */
+	function setTable(string $table) : self;
+
+	/**
+	 * @param string $key
+	 * @return object
+	 */
+	function setKey(string $key) : self;
+
+	/**
 	 * @param array $data
-	 * @return void
+	 * @return bool
 	 */
-	function __construct($data = []);
+	function create() : bool;
 
 	/**
-	 * @param string $name
-	 * @param string $value
-	 */
-	function __set($name, $value);
-
-	/**
-	 * @param string $name
+	 * @param int $id
 	 * @return mixed
 	 */
-	function __get($name);
+	function read($id = null);
 
 	/**
-	 * @param OrmQueryInterface $data
-	 * @return mixed
+	 * @param mixed $id
+	 * @return bool
 	 */
-	function select(OrmQueryInterface $data);
+	function update($id = null) : bool;
+
+	/**
+	 * @param mixed $id
+	 * @return bool
+	 */
+	function delete($id = null) : bool;
+
+    /**
+	 * @return int
+	 */
+	function lastInsertId() : int;
 
 	/**
 	 * @param string $sql
 	 * @param array $bind
-	 * @param array $args
+	 * @param string $type
+	 * @param int $mode
 	 * @return mixed
 	 */
-	function query($sql, $bind = null, $args = []);
+	function query(string $sql, ?array $bind = null, ?string $type = null, ?int $mode = null);
 
 	/**
-	 * @param int $id
+	 * @param mixed $columns
+	 * @param array $sort
+	 * @param int $limit
 	 * @return mixed
 	 */
-	function save($id = 0);
+	function search($columns = '*', array $sort = [], int $limit = 0);
 
 	/**
-	 * @param void
-	 * @return int
-	 */
-	function create() : int;
-
-	/**
-	 * @param int $id
-	 * @return int
-	 */
-	function delete($id = 0) : int;
-
-	/**
-	 * @param int $id
-	 * @return mixed
-	 */
-	function find($id = 0);
-
-	/**
-	 * @param array $fields
+	 * @param mixed $columns
 	 * @param array $sort
 	 * @return mixed
 	 */
-	function search($fields = [], $sort = []);
+	function searchOne($columns = '*', array $sort = []);
 
 	/**
-	 * @param void
+	 * @param mixed $columns
 	 * @return mixed
 	 */
-	function all();
+	function all($columns = '*');
 
 	/**
 	 * @param string $field
 	 * @return mixed
 	 */
 	function min(string $field);
-
-	/**
-	 * @param string $field
-	 * @return mixed
-	 */
-	function max(string $field);
-
-	/**
-	 * @param string $field
-	 * @return mixed
-	 */
-	function avg(string $field);
-
-	/**
-	 * @param string $field
-	 * @return mixed
-	 */
-	function sum(string $field);
-
-	/**
-	 * @param array $data
-	 * @return mixed
-	 */
-	function count($data = null);
-
-	/**
-	 * @param string $table
-	 * @return int
-	 */
-	function deleteAll($table) : int;
-
-	/**
-	 * @param string $table
-	 * @return mixed
-	 */
-	function resetId($table = '');
-
-	/**
-	 * @param void
-	 * @return bool
-	 */
-	function createDatabase();
 }
