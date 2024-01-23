@@ -3,8 +3,7 @@
  * @author     : Jakiboy
  * @package    : FloatPHP
  * @subpackage : Interfaces Kernel Component
- * @version    : 1.1.0
- * @category   : PHP framework
+ * @version    : 1.1.1
  * @copyright  : (c) 2018 - 2024 Jihad Sinnaour <mail@jihadsinnaour.com>
  * @link       : https://floatphp.com
  * @license    : MIT
