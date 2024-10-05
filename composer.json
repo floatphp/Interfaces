@@ -1,6 +1,6 @@
 {
   "name": "floatphp/interfaces",
-  "version" : "1.1.1",
+  "version" : "1.1.2",
   "type": "library",
   "description": "FloatPHP Interfaces Components",
   "keywords": ["php","micro-framework","framework","PSR","ORM","jakiboy"],
