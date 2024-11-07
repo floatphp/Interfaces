@@ -3,7 +3,7 @@
  * @author     : Jakiboy
  * @package    : FloatPHP
  * @subpackage : Interfaces Classes Component
- * @version    : 1.1.0
+ * @version    : 1.2.x
  * @copyright  : (c) 2018 - 2024 Jihad Sinnaour <mail@jihadsinnaour.com>
  * @link       : https://floatphp.com
  * @license    : MIT
@@ -16,47 +16,79 @@ namespace FloatPHP\Interfaces\Classes;
 interface RouterInterface
 {
     /**
+     * Create router from config.
+     *
      * @param array $routes
-     * @param string $basePath
-     * @param array $matchTypes
+     * @param string $base
+     * @param array $types
      */
-    function __construct($routes = [], $basePath = '', $matchTypes = []);
+    function __construct(array $routes = [], string $base = '', array $types = []);
 
     /**
+     * Retrieves all routes,
+     * Useful if you want to process or display routes.
+     *
      * @return array
      */
-    function getRoutes();
+    function getRoutes() : array;
 
     /**
+     * Add multiple routes at once from array in the following format,
+     * [[method, route, controller, name, permission]].
+     *
      * @param array $routes
      * @return void
      */
-    function addRoutes($routes);
+    function addRoutes(array $routes);
 
     /**
-     * @param string $basePath
+     * Set the base path.
+     *
+     * @param string $base
      * @return void
      */
-    function setBasePath($basePath);
+    function setBase(string $base);
 
     /**
-     * @param array $matchTypes
+     * Add named match types.
+     *
+     * @param array $types
      * @return void
      */
-    function addMatchTypes($matchTypes);
+    function addTypes(array $types);
 
     /**
-     * @param string $routeName
+     * Map route to target (controller),
+     * (GET|POST|PATCH|PUT|DELETE),
+     * Custom regex must start with an '@'.
+     *
+     * @param string $method
+     * @param string $route
+     * @param callable $controller
+     * @param string $name
+     * @param mixed $permission
+     * @return void
+     * @throws RouterException
+     */
+    function map(string $method, string $route, $controller, ?string $name = null, $permission = null);
+
+    /**
+     * Reversed routing,
+     * Generate the URL for a named route.
+     *
+     * @param string $name
      * @param array @params
      * @return string
-     * @throws Exception
+     * @throws RouterException
      */
-    function generate($routeName, $params = []);
+    function generate(string $name, array $params = []) : string;
 
     /**
-     * @param string $requestUrl
-     * @param string $requestMethod
-     * @return array|boolean
+     * Match given request URL against stored routes.
+     *
+     * @param string $url
+     * @param string $method
+     * @return mixed
      */
-    function match($requestUrl = null, $requestMethod = null);
+    function match(?string $url = null, ?string $method = null);
 }
