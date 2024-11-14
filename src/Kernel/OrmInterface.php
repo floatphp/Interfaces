@@ -3,7 +3,7 @@
  * @author     : Jakiboy
  * @package    : FloatPHP
  * @subpackage : Interfaces Kernel Component
- * @version    : 1.2.x
+ * @version    : 1.3.x
  * @copyright  : (c) 2018 - 2024 Jihad Sinnaour <mail@jihadsinnaour.com>
  * @link       : https://floatphp.com
  * @license    : MIT
@@ -70,7 +70,7 @@ interface OrmInterface
 	 */
 	function delete($id = null) : bool;
 
-    /**
+	/**
 	 * @return int
 	 */
 	function lastInsertId() : int;

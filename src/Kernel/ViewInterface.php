@@ -3,7 +3,7 @@
  * @author     : Jakiboy
  * @package    : FloatPHP
  * @subpackage : Interfaces Kernel Component
- * @version    : 1.2.x
+ * @version    : 1.3.x
  * @copyright  : (c) 2018 - 2024 Jihad Sinnaour <mail@jihadsinnaour.com>
  * @link       : https://floatphp.com
  * @license    : MIT
@@ -15,13 +15,13 @@ namespace FloatPHP\Interfaces\Kernel;
 
 interface ViewInterface
 {
-	/**
-	 * Set extended view callables.
-	 *
+    /**
+     * Set extended view callables.
+     *
      * @param CallableInterface $callable
-	 * @return void
-	 */
-	function setCallables(?CallableInterface $callable = null);
+     * @return void
+     */
+    function setCallables(?CallableInterface $callable = null);
 
     /**
      * Render view.
