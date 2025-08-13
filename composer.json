@@ -1,15 +1,22 @@
 {
   "name": "floatphp/interfaces",
-  "version" : "1.4.0",
+  "version": "1.5.0",
   "type": "library",
   "description": "FloatPHP Interfaces Components",
-  "keywords": ["php","micro-framework","framework","PSR","ORM","jakiboy"],
+  "keywords": [
+    "php",
+    "micro-framework",
+    "framework",
+    "PSR",
+    "ORM",
+    "jakiboy"
+  ],
   "homepage": "https://floatphp.com",
   "license": "MIT",
   "authors": [
     {
       "name": "Jihad Sinnaour",
-      "email": "mail@jihadsinnaour.com",
+      "email": "me@jihadsinnaour.com",
       "role": "Founder"
     }
   ],
@@ -17,8 +24,8 @@
     "php": ">=8.2"
   },
   "autoload": {
-    "psr-4" : {
-      "FloatPHP\\Interfaces\\" : "src/"
+    "psr-4": {
+      "FloatPHP\\Interfaces\\": "src/"
     }
   }
 }
